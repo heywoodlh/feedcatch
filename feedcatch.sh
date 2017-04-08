@@ -15,7 +15,13 @@ print(titlenospace)"
 
 SITE_TITLE=$(python_catcher)
 
- 
+GREGCONF=$(retrieveglobalconf)
+
+if grep "Create subdirectory = no" "$GREGCONF"
+then
+	sed -i '/Create subdirectory = no/c\Create subdirectory = yes' "$GREGCONF"
+fi
+
 echo "Found RSS feed for $SITE_TITLE"
 
 

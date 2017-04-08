@@ -15,7 +15,7 @@ print(titlenospace)"
 
 SITE_TITLE=$(python_catcher)
 
-GREGCONF=$(retrieveglobalconf)
+GREGCONF=$(greg retrieveglobalconf)
 
 if grep "Create subdirectory = no" "$GREGCONF"
 then

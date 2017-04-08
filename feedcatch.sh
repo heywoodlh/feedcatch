@@ -23,6 +23,13 @@ greg add "$SITE_TITLE" "$URL"
 
 greg check -f "$SITE_TITLE" >> /dev/null
 
+if [ ! -d ~/Podcasts/"$SITE_TITLE" ]
+then
+	mkdir -p ~/Podcasts/"$SITE_TITLE"	
+fi 
+
+greg sync -dd ~/Podcasts/"$SITE_TITLE"
+
 done
 
 if crontab -l | grep "@daily greg sync"

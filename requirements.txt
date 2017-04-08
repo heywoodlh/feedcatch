@@ -1,0 +1,7 @@
+appdirs==1.4.3
+crontab==0.21.3
+feedparser==5.2.1
+Greg==0.4.7
+packaging==16.8
+pyparsing==2.2.0
+six==1.10.0

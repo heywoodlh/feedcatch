@@ -17,7 +17,12 @@ SITE_TITLE=$(python_catcher)
 
 GREGCONF=$(greg retrieveglobalconf)
 
-if grep "Create subdirectory = no" "$GREGCONF"
+
+if [ ! -w $GREGCONF ] && grep "Create subdirectory = no" "$GREGCONF"
+then 	
+	sudo sed -i '/Create subdirectory = no/c\Create subdirectory = yes' "$GREGCONF"
+
+elif grep "Create subdirectory = no" "$GREGCONF"
 then
 	sed -i '/Create subdirectory = no/c\Create subdirectory = yes' "$GREGCONF"
 fi

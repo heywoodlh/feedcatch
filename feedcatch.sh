@@ -4,7 +4,7 @@ for URL in "$@"; do
 
 
 python_catcher() { 
-python -c "import feedparser 
+python3 -c "import feedparser 
 rssfeedurl = \"$URL\"
 d = feedparser.parse(rssfeedurl) 
 title = d['feed']['title']

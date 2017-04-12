@@ -43,7 +43,9 @@ greg sync -dd ~/Podcasts/"$SITE_TITLE"
 
 done
 
-if crontab -l | grep "@daily greg sync"
+GREGLOCATION="$(which greg)"
+
+if crontab -l | grep '*/5 * * * * '"$GREGLOCATION"' sync >> cronout.txt'
 then
 	exit 0
 else
@@ -53,7 +55,7 @@ else
 
 	if [ $CRONJOBREPLY == "Y" ]
 	then 
-		echo "@daily greg sync" | crontab -
+		echo '*/5 * * * * '"$GREGLOCATION"' sync >> cronout.txt' | crontab -
 	exit 0
 	fi
 fi

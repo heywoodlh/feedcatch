@@ -3,3 +3,6 @@ Feedcatch.sh: Simple BASH script that utilizes the python program greg to find a
 Requirements are located in requirements.txt. Can be installed via pip by running "pip install -r requirements.txt".
 
 Requires python3.
+
+Usage: 
+./feedcatch https://url-to-podcast/feedurl

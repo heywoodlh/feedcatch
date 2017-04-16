@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+DEPS=(greg)
+if ! which greg 
+then 
+	echo "Please install greg"
+	exit 2	
+fi 
+
 for URL in "$@"; do
 
 

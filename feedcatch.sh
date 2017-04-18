@@ -52,8 +52,11 @@ done
 
 GREGLOCATION="$(which greg)"
 
+CRONLOGLOCATION="$(pwd)"
+
 if crontab -l | grep 'cronout.txt'
 then
+	echo "Success"
 	exit 0
 else
 
@@ -62,7 +65,8 @@ else
 
 	if [ $CRONJOBREPLY == "Y" ]
 	then 
-		echo '*/5 * * * * '"$GREGLOCATION"' sync >> cronout.txt' | crontab -
+		echo '*/5 * * * * '"$GREGLOCATION"' sync >> '"$CRONLOGLOCATION"'/cronout.txt' | crontab -
+		echo "Cron job log for $0 set to report to $CRONLOGLOCATION/cronout.txt"
 	exit 0
 	fi
 fi

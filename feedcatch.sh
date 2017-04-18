@@ -52,7 +52,7 @@ done
 
 GREGLOCATION="$(which greg)"
 
-if crontab -l | grep '*/5 * * * * '"$GREGLOCATION"' sync >> cronout.txt'
+if crontab -l | grep 'cronout.txt'
 then
 	exit 0
 else

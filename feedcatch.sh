@@ -9,7 +9,6 @@ fi
 
 for URL in "$@"; do
 
-
 python_catcher() { 
 python3 -c "import feedparser 
 rssfeedurl = \"$URL\"
@@ -41,12 +40,12 @@ greg add "$SITE_TITLE" "$URL"
 
 greg check -f "$SITE_TITLE" >> /dev/null
 
-if [ ! -d ~/Podcasts/"$SITE_TITLE" ]
+if [ ! -d "$HOME"/Podcasts/"$SITE_TITLE" ]
 then
-	mkdir -p ~/Podcasts/"$SITE_TITLE"	
+	mkdir -p "$HOME"/Podcasts/"$SITE_TITLE"	
 fi 
 
-greg sync -dd ~/Podcasts/"$SITE_TITLE"
+greg sync "$SITE_TITLE" -dd "$HOME"/Podcasts/"$SITE_TITLE"
 
 done
 
